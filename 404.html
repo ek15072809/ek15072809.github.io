@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>404 / ek15072809</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="stylesheet" href="/assets/css/fonts.css">
+<link rel="stylesheet" href="/assets/css/site.css">
+<link rel="stylesheet" href="/assets/css/tailwind.css">
+<link rel="stylesheet" href="/assets/css/404.css">
+<script>
+  // 旧URLを新URLへ転送
+  //   /news-en.html → /en/news.html,  /news.html → /jp/news.html
+  (function () {
+    var m = location.pathname.match(/^\/([a-z]+)(-en)?\.html$/);
+    if (!m || (m[1] === 'index' && !m[2])) return;
+    var dir = m[2] ? '/en/' : '/jp/';
+    var page = (m[1] === 'index') ? '' : m[1] + '.html';
+    location.replace(dir + page + location.search + location.hash);
+  })();
+</script>
+</head>
+<body>
+<div class="bg-layer bg-ambient" aria-hidden="true"></div>
+<div class="bg-layer bg-grid" aria-hidden="true"></div>
+
+<main class="nf-main">
+  <p class="index-num text-2xl">§ Error</p>
+  <h1 class="serif nf-code">4<span>0</span>4</h1>
+  <p class="serif text-2xl md:text-3xl font-medium">Page not found</p>
+  <p class="nf-lead">
+    お探しのページは、量子化の途中で失われてしまったようです。<br>
+    <small>The page you were looking for was lost somewhere in quantization.</small>
+  </p>
+
+  <div class="nf-frame">
+    <canvas id="game" class="nf-canvas" width="720" height="420" role="img"
+            aria-label="ミニゲーム：天馬を羽ばたかせて、拒否文の壁の隙間を通り抜ける / Mini game: glide a winged Q through the walls of refusals"></canvas>
+  </div>
+  <noscript><p class="nf-hint">JavaScript を有効にすると、ここでミニゲームが遊べます。</p></noscript>
+
+  <p class="nf-hint mono">
+    <b>Space</b> / <b>Click</b> / <b>Tap</b> — glide<br>
+    Golden orb — abliterate the next wall
+  </p>
+
+  <nav class="nf-nav mono" aria-label="Back">
+    <a href="/" class="link">← Top (日本語)</a>
+    <a href="/en/" class="link">Top (English) →</a>
+  </nav>
+</main>
+
+<script src="/assets/js/404-game.js"></script>
+</body>
+</html>
