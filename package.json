@@ -1,0 +1,14 @@
+{
+  "name": "ek15072809-github-io",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static site for ek15072809.github.io",
+  "scripts": {
+    "build:css": "tailwindcss -c tailwind.config.js -i src/input.css -o assets/css/tailwind.css --minify",
+    "watch:css": "tailwindcss -c tailwind.config.js -i src/input.css -o assets/css/tailwind.css --watch",
+    "serve": "python3 -m http.server 8000"
+  },
+  "devDependencies": {
+    "tailwindcss": "3.4.17"
+  }
+}
